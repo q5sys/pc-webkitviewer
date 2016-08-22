@@ -107,7 +107,10 @@ void MainUI::slotSingleInstance(){
 
 void MainUI::LinkClicked(const QUrl &url){
   if(DEBUG){ qDebug() << "Link Clicked:" << url.toString(); }
-  if(url.toString().startsWith(baseURL) || url.toString().startsWith("file://"+baseURL.section("/",0,-2) ) ){
+  bool samedomain = url.toString().startsWith(baseURL) || url.toString().startsWith("file://"+baseURL.section("/",0,-2) );
+  //Also look for some common/valid redirects (http <--> https)
+  if(!samedomain){ samedomain = url.toString().section("://",1,-1).startsWith( baseURL.section("://",1,-1) ); }
+  if(samedomain){
     if(url==webview->url()){ return; }
     // Internal page - go there
     webview->load( url );
