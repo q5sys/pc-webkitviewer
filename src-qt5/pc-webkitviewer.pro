@@ -4,10 +4,6 @@ LANGUAGE	= C++
 
 CONFIG	+= qt warn_on release
 
-LIBS    += -L../libtrueos -L/usr/local/lib -ltrueos-utils -ltrueos-ui
-
-INCLUDEPATH+= ../libtrueos/utils ../libtrueos/ui /usr/local/include
-
 HEADERS	+= mainUI.h
 
 SOURCES	+= main.cpp \

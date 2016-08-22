@@ -22,7 +22,6 @@
 #include <QToolButton>
 #include <QShortcut>
 
-#include <../utils.h>
 
 class MainUI : public QMainWindow{
 	Q_OBJECT
