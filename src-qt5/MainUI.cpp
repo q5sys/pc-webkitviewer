@@ -1,6 +1,9 @@
 #include "MainUI.h"
 
 #include <QKeySequence>
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QWebSettings>
 
 MainUI::MainUI(bool debugmode, QString fileURL, QString title, QString iconpath) : QMainWindow(){
   //Setup UI
@@ -61,6 +64,9 @@ MainUI::MainUI(bool debugmode, QString fileURL, QString title, QString iconpath)
       group_search->layout()->addItem(new QSpacerItem(0,0,QSizePolicy::Expanding, QSizePolicy::Minimum) );
   //Setup the Main Interface
     webview = new QWebView(this);
+      //Fix the font DPI within the webview to match the current screen settings
+      QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly,true);
+      webview->setZoomFactor( QApplication::desktop()->screen()->logicalDpiX()/96.0 );
     this->centralWidget()->layout()->addWidget(webview);
     if(webview->page()==0){ webview->setPage(new QWebPage(webview)); }
     webview->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
