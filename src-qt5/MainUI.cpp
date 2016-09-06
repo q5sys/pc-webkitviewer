@@ -68,7 +68,7 @@ MainUI::MainUI(bool debugmode, QString fileURL, QString title, QString iconpath)
     if(webview->page()==0){ webview->setPage(new QWebPage(webview)); }
     webview->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
       //Fix the font DPI within the webview to match the current screen settings
-      QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly,true);
+      //QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly,true);
       webview->setZoomFactor( QApplication::desktop()->screen()->logicalDpiX()/96.0 );
     this->centralWidget()->layout()->addWidget(group_search);
   
