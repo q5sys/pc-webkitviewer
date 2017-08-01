@@ -28,6 +28,7 @@ TRANSLATIONS =  i18n/webkitviewer_af.ts \
 		i18n/webkitviewer_de.ts \
 		i18n/webkitviewer_el.ts \
 		i18n/webkitviewer_en_GB.ts \
+		i18n/webkitviewer_en_AU.ts \
 		i18n/webkitviewer_en_ZA.ts \
 		i18n/webkitviewer_es.ts \
 		i18n/webkitviewer_et.ts \
