@@ -1,12 +1,11 @@
-# Created by: Joe Maloney <jmaloney@ixsystems.com>
 # $FreeBSD$
 
 PORTNAME=	pc-webkitviewer
 PORTVERSION=	%%CHGVERSION%%
 CATEGORIES=	www
 
-MAINTAINER=	jmaloney@ixsystems.com
-COMMENT=	TrueOS QT5 Utilities
+MAINTAINER=	jt@ixsystems.com
+COMMENT=	TrueOS QT5 Simple WebViewer
 
 LICENSE=	BSD2CLAUSE
 
